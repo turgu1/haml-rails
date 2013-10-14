@@ -6,9 +6,13 @@ module Haml
       source_root File.expand_path("../templates", __FILE__)
 
       def copy_view_files
-        available_views.each do |view|
+        available_specific_views.each do |view|
           filename = filename_with_extensions(view)
           template "#{view}.html.haml", File.join("app/views", controller_file_path, filename)
+        end
+        available_generic_views.each do |view|
+          template "#{view}.html.haml", File.join("app/views/application", "#{view}.html.haml")
+          template "#{view}.js.erb", File.join("app/views/application", "#{view}.js.erb")
         end
       end
 
@@ -23,7 +27,11 @@ module Haml
 
     protected
 
-      def available_views
+      def available_generic_views
+        %w(index edit show new)
+      end
+
+      def available_specific_views
         %w(_index _edit _show _new _edit_link _new_link)
       end
 

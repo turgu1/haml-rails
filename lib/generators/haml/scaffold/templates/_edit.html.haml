@@ -2,6 +2,6 @@
 
 = render 'form'
 
-= link_to 'Show', @<%= singular_table_name %>
+= remote_link_to 'Show', <%= singular_table_name %>_path(@<%= singular_table_name %>)
 \|
-= link_to 'Back', <%= index_helper %>_path
+= remote_link_to 'Back', <%= index_helper %>_path
