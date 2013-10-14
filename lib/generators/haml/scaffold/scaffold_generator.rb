@@ -24,7 +24,7 @@ module Haml
     protected
 
       def available_views
-        %w(_index _edit _show _new)
+        %w(_index _edit _show _new _edit_link _new_link)
       end
 
       def handler
