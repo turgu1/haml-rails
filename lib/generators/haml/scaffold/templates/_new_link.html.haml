@@ -1,0 +1,4 @@
+= remote_link_to('<i class="icon-plus"></i>'.html_safe,
+    new_<%= singular_table_name %>_path,
+    class: 'btn btn-mini btn-primary',
+    title: 'Add a new <%= singular_table_name.human_name %>') if can? :create, Org
