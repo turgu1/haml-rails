@@ -1,0 +1,21 @@
+.legend Listing <%= plural_table_name %>
+
+%table
+  %thead
+    %tr
+<% for attribute in attributes -%>
+      %th <%= attribute.human_name %>
+<% end -%>
+      %th.no-print
+
+  %tbody
+    - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+      %tr
+<% for attribute in attributes -%>
+        %td= <%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+        %td.no-print= all_actions <%= singular_table_name %>, "[#{<%= singular_table_name %>.name}]"
+
+%br
+
+= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path
