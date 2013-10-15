@@ -16,8 +16,4 @@
 <% for attribute in attributes -%>
         %td= <%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
-        %td.no-print= all_actions <%= singular_table_name %>, "[#{<%= singular_table_name %>.name}]"
-
-%br
-
-= remote_link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path
+        %td.no-print= all_actions <%= singular_table_name %>, "#{<%= singular_table_name %>.name}"
