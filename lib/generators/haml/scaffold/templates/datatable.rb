@@ -1,4 +1,4 @@
-class <%= plural_table_name %>Datatable < BaseDatatable
+class <%= controller_class_name %>Datatable < BaseDatatable
 
   def initialize(view)
     @model = <%= table_name %>
