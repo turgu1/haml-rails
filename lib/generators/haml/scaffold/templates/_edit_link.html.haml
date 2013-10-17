@@ -1,4 +1,4 @@
 = remote_link_to('<i class="icon-edit icon-white"></i>'.html_safe,
     edit_<%= singular_table_name %>_path(edit_link),
-    :class => 'btn btn-mini btn-primary',
-    :title => 'Edit <%= human_name %> Attributes') if can? :update, edit_link
+    class: 'btn btn-mini btn-primary',
+    title: 'Edit <%= human_name %> Attributes') if can? :update, edit_link

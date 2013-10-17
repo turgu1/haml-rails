@@ -5,10 +5,9 @@
 %table.dtable{ 'data-source' => <%= plural_table_name %>_path(format: :json) }
   %thead
     %tr
-<% first = true; for attribute in attributes -%>
+<%- first = true; for attribute in attributes -%>
       %th<%= first ? '.hleft' : '.hcenter' %> <%= attribute.human_name %>
-      <% first = false -%>
-<% end -%>
+<%- first = false; end -%>
       %th.no-print.no-sort.no-wrap
 
   %tbody

@@ -4,8 +4,7 @@
   .form-inputs
   <%- first = true; attributes.each do |attribute| -%>
     = f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %><%= first ? ', autofocus: true' : '' %>
-    <% first = false -%>
-  <%- end -%>
+  <%- first = false; end -%>
 
   .form-actions
     = f.button :submit
