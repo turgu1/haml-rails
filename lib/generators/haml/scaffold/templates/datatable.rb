@@ -1,7 +1,7 @@
 class <%= controller_class_name %>Datatable < BaseDatatable
 
   def initialize(view)
-    @model = <%= table_name %>
+    @model = <%= class_name %>
     super(view)
   end
 
