@@ -7,19 +7,19 @@ class <%= plural_table_name %>Datatable < BaseDatatable
 
   private
 
-  def data
-    items.map do |item|
-      [
+    def data
+      items.map do |item|
+        [
 <% for attribute in attributes -%>
-          item.<%= attribute.name %>
+            item.<%= attribute.name %>,
 <% end -%>
-          all_actions(item, item.<%= attributes[0].name %>)
-      ]
+            all_actions(item, item.<%= attributes[0].name %>)
+        ]
+      end
     end
-  end
 
-  def sort_column
-    columns = %w[<% for attribute in attributes %> "<%= attribute.name %>"<% end %>]
-    columns[params[:iSortCol_0].to_i]
-  end
+    def sort_column
+      columns = %w[<%= for attribute in attributes %> "<%= attribute.name %>"<% end %>]
+      columns[params[:iSortCol_0].to_i]
+    end
 end
