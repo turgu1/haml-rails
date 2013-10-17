@@ -2,18 +2,12 @@
   = render 'new_link'
   Listing <%= plural_table_name.humanize %>
 
-%table
+%table.dtable{ 'data-source' => <%= plural_table_name %>_path(format: :json) }
   %thead
     %tr
 <% for attribute in attributes -%>
       %th <%= attribute.human_name %>
 <% end -%>
-      %th.no-print
+      %th.no-print.no-sort.no-wrap
 
   %tbody
-    - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
-      %tr
-<% for attribute in attributes -%>
-        %td= <%= singular_table_name %>.<%= attribute.name %>
-<% end -%>
-        %td.no-print= all_actions <%= singular_table_name %>, "#{<%= singular_table_name %>.name}"

@@ -14,6 +14,9 @@ module Haml
           template "#{view}.html.haml", File.join("app/views/application", "#{view}.html.haml")
           template "#{view}.js.erb", File.join("app/views/application", "#{view}.js.erb")
         end
+        datatable_views.each do |dtable|
+          template "#{dtable}.rb", File.join("app/datatables", "#{plural_table_name}_#{dtable}.rb")
+        end
       end
 
       hook_for :form_builder, :as => :scaffold
@@ -33,6 +36,10 @@ module Haml
 
       def available_specific_views
         %w(_index _edit _show _new _edit_link _new_link)
+      end
+
+      def datatable_views
+        %w(datatable)
       end
 
       def handler
