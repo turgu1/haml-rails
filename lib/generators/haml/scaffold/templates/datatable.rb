@@ -19,7 +19,7 @@ class <%= plural_table_name %>Datatable < BaseDatatable
     end
 
     def sort_column
-      columns = %w[<%= for attribute in attributes %> "<%= attribute.name %>"<% end %>]
+      columns = %w[<% for attribute in attributes %> "<%= attribute.name %>"<% end %>]
       columns[params[:iSortCol_0].to_i]
     end
 end
