@@ -1,6 +1,6 @@
 .legend_u
-  = render partial: 'edit_link', object: @<%= singular_table_name %>
   #{@<%= singular_table_name %>.<%= attributes.first.name %>}
+  = render partial: 'edit_link', object: @<%= singular_table_name %>
 
 = show_entry @<%= singular_table_name %> do |e|
 <% for attribute in attributes -%>

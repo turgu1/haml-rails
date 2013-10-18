@@ -1,6 +1,6 @@
 .legend
-  = render 'new_link'
   <%= plural_table_name.titleize %>
+  = render 'new_link'
 
 %table.dtable{ 'data-source' => <%= plural_table_name %>_path(format: :json) }
   %thead
